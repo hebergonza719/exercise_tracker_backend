@@ -23,8 +23,7 @@ mongoose.connect(
 // Middleware
 server.use(helmet());
 server.use(cors({
-  origin: process.env.CORS_ORIGIN_URL,
-  credentials: true
+  origin: process.env.CORS_ORIGIN_URL
 }))
 server.use(express.json());
 
