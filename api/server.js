@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 
@@ -22,9 +22,10 @@ mongoose.connect(
 
 // Middleware
 server.use(helmet());
-server.use(cors({
-  origin: process.env.CORS_ORIGIN_URL
-}))
+// server.use(cors({
+//   origin: process.env.CORS_ORIGIN_URL,
+//   credentials: false
+// }))
 server.use(express.json());
 
 // Routers
