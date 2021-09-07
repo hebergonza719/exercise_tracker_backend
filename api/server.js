@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const authenticate = require('../auth/authenticate-middleware');
 const authRouter = require('../auth/auth-router');
 const logsRouter = require('../logs/logs-router');
+const guestRouter = require('../guest/guest-router');
 
 const server = express();
 
@@ -31,6 +32,7 @@ server.use(express.json());
 // Routers
 server.use('/api/auth', authRouter);
 server.use('/api/logs', authenticate, logsRouter);
+server.use('/api/guest', guestRouter);
 
 
 server.get('/', (req, res, next) => {
